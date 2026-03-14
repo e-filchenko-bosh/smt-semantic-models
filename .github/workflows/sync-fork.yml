@@ -19,6 +19,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          git config --global credential.helper store
+          echo "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
 
       - name: Add upstream remote and fetch all branches
         run: |
@@ -34,3 +36,4 @@ jobs:
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
