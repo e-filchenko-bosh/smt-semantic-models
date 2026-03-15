@@ -2,7 +2,7 @@ name: Merge All Branches from Upstream
 
 on:
   schedule:
-    - cron: '0 12 * * *' # Every day at 12:00 UTC
+    - cron: '* 1/6 * * *' # Every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -12,15 +12,13 @@ jobs:
       - name: Checkout your fork
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
           fetch-depth: 0 # All branches
 
       - name: Set up git
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git config --global credential.helper store
-          echo "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
 
       - name: Add upstream remote and fetch all branches
         run: |
@@ -34,6 +32,3 @@ jobs:
             git merge --no-edit upstream/$branch || true
             git push origin $branch
           done
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ github.actor }}
