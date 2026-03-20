@@ -1,0 +1,34 @@
+name: Merge All Branches from Upstream
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # Runs at 22:00
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your fork
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0 # All branches
+
+      - name: Set up git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Add upstream remote and fetch all branches
+        run: |
+          git remote add upstream https://github.com/bci-oss/smt-semantic-models.git
+          git fetch upstream
+
+      - name: Merge all branches from upstream
+        run: |
+          for branch in $(git branch -r | grep 'upstream/' | grep -v 'HEAD' | sed 's/upstream\///'); do
+            git checkout $branch || git checkout -b $branch origin/$branch || git checkout -b $branch
+            git merge --no-edit upstream/$branch || true
+            git push origin $branch
+          done
