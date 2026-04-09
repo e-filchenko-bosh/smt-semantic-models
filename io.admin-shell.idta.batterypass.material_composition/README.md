@@ -27,6 +27,17 @@ The folder "gen" for each version contains sammple JSON files, the JSON schema a
 # Changelog
 All notable changes to this model will be documented in this section.
 
+## [1.0.1] - April 2026
+
+Major changes:
+
+* make BatteryMaterialMass optional (https://github.com/admin-shell-io/smt-semantic-models/issues/83[#83])
+
+Minor changes (not affecting payload or specification):
+
+* rename HubstanceSubstanceLocationEntity to HazardousSubstanceLocationEntity
+* editorial changes in descriptions
+
 ## [1.0.0] - February 2026
 
 for changelog see  [IDTA-02035-6 V1.0, section "Version history"]()
