@@ -236,12 +236,19 @@
    samm:preferredName "temperature conditions"@en ;
    samm:description "Temperature conditions, last update."@en ;
    samm:properties ( 
+   [ samm:property :measuredTemp; samm:optional true; samm:payloadName "MeasuredTemp" ]
    [ samm:property :timeExtremeHighTemp; samm:optional true; samm:payloadName "TimeExtremeHighTemp" ]
    [ samm:property :timeExtremeLowTemp; samm:optional true; samm:payloadName "TimeExtremeLowTemp" ]
    [ samm:property :timeExtremeHighTempCharging; samm:optional true;samm:payloadName "TimeExtremeHighTempCharging" ]
    [ samm:property :timeExtremeLowTempCharging; samm:optional true; samm:payloadName "TimeExtremeLowTempCharging" ]
    [ samm:property :lastUpdate; samm:payloadName "LastUpdate" ]
    ) .
+ 
+:measuredTemp a samm:Property ;
+   samm:preferredName "temperature"@en ;
+   samm:description "Temperature measured in degree Celsius."@en ;
+   samm:characteristic :Temperature ;
+   samm:exampleValue "20"^^xsd:float .
    
 :timeExtremeHighTemp a samm:Property ;
    samm:preferredName "time extreme high temperature"@en ;
@@ -249,6 +256,10 @@
    samm:see <urn:irdi:0173-1#02-ABL816#001> ;
    samm:characteristic :TimeExtremeHighTemp ;
    samm:exampleValue "0"^^xsd:float .
+   
+:Temperature a samm-c:Measurement ;
+   samm:dataType xsd:float ;
+   samm-c:unit unit:degreeCelsius .
    
 :TimeExtremeHighTemp a samm-c:Measurement ;
    samm:dataType xsd:float ;
