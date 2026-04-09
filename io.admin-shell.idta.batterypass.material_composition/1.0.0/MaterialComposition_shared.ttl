@@ -154,7 +154,7 @@
 :hazardousSubstanceLocation a samm:Property ;
    samm:preferredName "location"@en ;
    samm:description "Hazardous substances (No. 19-23): Location on a (sub-)component-level of all hazardous substances (as "any substance that poses a threat to human health and the environment"). Suggested via a unique identifier or nomenclature."@en ;
-   samm:characteristic :HubstanceSubstanceLocationEntity .
+   samm:characteristic :HazardousSubstanceLocationEntity .
 
 :hazardousSubstanceIdentifier a samm:Property ;
    samm:preferredName "identifier"@en ;
@@ -208,7 +208,7 @@
    samm:description "Impact."@en ;
    samm:dataType xsd:string .
 
-:HubstanceSubstanceLocationEntity a samm-c:SingleEntity ;
+:HazardousSubstanceLocationEntity a samm-c:SingleEntity ;
    samm:preferredName "location"@en ;
    samm:description "The impact of substances, in particular, hazardous substances, contained in batteries on the environment and on human health or safety of persons, including impact due to inappropriate discarding of waste batteries such as littering or discarding as unsorted municipal waste."@en ;
    samm:dataType :BatteryLocation .
