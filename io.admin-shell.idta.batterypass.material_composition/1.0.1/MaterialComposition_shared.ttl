@@ -122,7 +122,7 @@
 
 :batteryMaterialMass a samm:Property ;
    samm:preferredName "weight"@en ;
-   samm:description "Weight of component material."@en ;
+   samm:description "Weight of component material in Kilogram."@en ;
    samm:characteristic :WeightInKilogram ;
    samm:exampleValue "52"^^xsd:float .
 
@@ -135,17 +135,20 @@
 :hazardousSubstanceClass a samm:Property ;
    samm:preferredName "class"@en ;
    samm:description "Battery Regulation narrows reporting to substances falling under defined hazard classes and categories of the CLP regulation."@en ;
-   samm:characteristic :HazardousSubstanceClassEnum .
+   samm:characteristic :HazardousSubstanceClassEnum ;
+   samm:exampleValue :SkinCorrosionOrIrritation .
 
 :hazardousSubstanceName a samm:Property ;
    samm:preferredName "name"@en ;
    samm:description "Clear name of hazardous substance."@en ;
-   samm:characteristic samm-c:Text .
+   samm:characteristic samm-c:Text ;
+   samm:exampleValue "Cobalt (Co)" .
 
 :hazardousSubstanceConcentration a samm:Property ;
    samm:preferredName "concentration"@en ;
    samm:description "Concentration of hazardous substance."@en ;
-   samm:characteristic :HazardousSubstanceConcentrationCharacteristic .
+   samm:characteristic :HazardousSubstanceConcentrationCharacteristic ;
+   samm:exampleValue "20"^^xsd:double .
 
 :hazardousSubstanceImpact a samm:Property ;
    samm:preferredName "impact"@en ;
@@ -211,7 +214,8 @@
 :Impact a samm:Characteristic;
    samm:preferredName "impact"@en ;
    samm:description "Impact."@en ;
-   samm:dataType xsd:string .
+   samm:dataType xsd:string ;
+   sammValue "May cause an allergic skin reaction." .
 
 :HazardousSubstanceLocationEntity a samm-c:SingleEntity ;
    samm:preferredName "location"@en ;
