@@ -210,7 +210,7 @@
 
 :HubstanceSubstanceLocationEntity a samm-c:SingleEntity ;
    samm:preferredName "location"@en ;
-   samm:description "\"The impact of substances, in particular, hazardous substances, contained in batteries on the environment and on human health or safety of persons, including impact due to inappropriate discarding of waste batteries such as littering or discarding as unsorted municipal waste?."@en ;
+   samm:description "The impact of substances, in particular, hazardous substances, contained in batteries on the environment and on human health or safety of persons, including impact due to inappropriate discarding of waste batteries such as littering or discarding as unsorted municipal waste."@en ;
    samm:dataType :BatteryLocation .
 
 :BatteryLocation a samm:Entity ;
