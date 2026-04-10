@@ -43,6 +43,7 @@ All notable changes to this model will be documented in this section.
 Major Changes:
 
 * remove properties ManufacturerProductDesignation, ManufacturerArticleNumber and ManufacturerOrderCode (https://github.com/admin-shell-io/smt-semantic-models/issues/82[#82])
+* add IRDI to :TechnicalAttributes to be compliant to IDTA-02003-2-0 Generic Technical Data 2.0.1 (https://github.com/admin-shell-io/smt-semantic-models/issues/88[#88])
 
 ## [1.0.0] - February 2026
 

@@ -35,6 +35,7 @@
 
 
 :TechnicalAttributes a samm:Entity ;
+  samm:see <urn:irdi:0173-1#02-ABL358#002/0173-1#01-AHX773#002> .
   samm:properties (  
     [ samm:property :capacityEnergyVoltage; samm:payloadName "CapacityEnergyVoltage" ] 
     [ samm:property :roundTripEnergyEfficiency; samm:payloadName "RoundTripEnergyEfficiency" ] 
