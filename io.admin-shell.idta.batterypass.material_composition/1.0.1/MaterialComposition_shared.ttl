@@ -80,12 +80,12 @@
    samm:preferredName "hazardous substance"@en ;
    samm:description "Hazardous substances (No. 19-23): Name (agreed substance nomenclature, e.g. IUPAC or chemical name) all hazardous substance (as any substance that poses a threat to human health and the environment'). Suggested above 0.1 % weight by weight within each (sub-)component."@en ;
    samm:properties ( 
-	[ samm:property :hazardousSubstanceClass ;  samm:payloadName "HazardousSubstanceClass" ] 
+	[ samm:property :hazardousSubstanceClass ;  samm:optional true; samm:payloadName "HazardousSubstanceClass" ] 
     [ samm:property :hazardousSubstanceName ;  samm:payloadName "HazardousSubstanceName" ]   
-    [ samm:property :hazardousSubstanceConcentration ;  samm:payloadName "HazardousSubstanceConcentration" ]   
- 	[ samm:property :hazardousSubstanceImpact ;  samm:payloadName "HazardousSubstanceImpact" ] 
- 	[ samm:property :hazardousSubstanceLocation ;  samm:payloadName "HazardousSubstanceLocation" ]  	
-	[ samm:property :hazardousSubstanceIdentifier ;  samm:payloadName "HazardousSubstanceIdentifier" ] 
+    [ samm:property :hazardousSubstanceIdentifier ;  samm:payloadName "HazardousSubstanceIdentifier" ] 
+    [ samm:property :hazardousSubstanceConcentration ;  samm:optional true; samm:payloadName "HazardousSubstanceConcentration" ]   
+ 	[ samm:property :hazardousSubstanceImpact ; samm:optional true; samm:payloadName "HazardousSubstanceImpact" ] 
+ 	[ samm:property :hazardousSubstanceLocation ;  samm:optional true; samm:payloadName "HazardousSubstanceLocation" ]  	
    ) .
 
 :shortName a samm:Property ;
