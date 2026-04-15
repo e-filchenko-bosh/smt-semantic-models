@@ -16,9 +16,9 @@
   "HazardousSubstances" : [ {
     "HazardousSubstanceClass" : "SkinCorrosionOrIrritation",
     "HazardousSubstanceName" : "Cobalt (Co)",
+    "HazardousSubstanceIdentifier" : "346417-97-8",
     "HazardousSubstanceConcentration" : 20.0,
-    "HazardousSubstanceImpact" : [ "m7j" ],
-    "HazardousSubstanceLocation" : { },
-    "HazardousSubstanceIdentifier" : "346417-97-8"
+    "HazardousSubstanceImpact" : [ "xP15" ],
+    "HazardousSubstanceLocation" : { }
   } ]
 }

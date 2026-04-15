@@ -18,12 +18,16 @@
           "ShortName" : {
             "description" : "Short name.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#shortName",
-            "$ref" : "#/components/schemas/Text"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Text"
+            } ]
           },
           "ClearName" : {
             "description" : "Clear name.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#clearName",
-            "$ref" : "#/components/schemas/Text"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Text"
+            } ]
           }
         },
         "required" : [ "ShortName", "ClearName" ]
@@ -43,12 +47,16 @@
         "properties" : {
           "ComponentName" : {
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentName",
-            "$ref" : "#/components/schemas/Text"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Text"
+            } ]
           },
           "ComponentId" : {
             "description" : "Identifier of the component.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentId",
-            "$ref" : "#/components/schemas/Text"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Text"
+            } ]
           }
         }
       },
@@ -82,27 +90,37 @@
           "BatteryMaterialLocation" : {
             "description" : "Battery component that relates to the material.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialLocation",
-            "$ref" : "#/components/schemas/BatteryMaterialLocation"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/BatteryMaterialLocation"
+            } ]
           },
           "BatteryMaterialIdentifier" : {
             "description" : "Registration number of an international designation standard (CAS = Chemical Abstracts Service) for chemical substances. For each chemical substance registered in the CAS database (also biosequences, alloys, polymers) there is a unique CAS number.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialIdentifier",
-            "$ref" : "#/components/schemas/MaterialIdentifierTrait"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/MaterialIdentifierTrait"
+            } ]
           },
           "BatteryMaterialName" : {
             "description" : "Clear name of Material.\n\n Alphanumeric character string which describes the object.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialName",
-            "$ref" : "#/components/schemas/Text"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Text"
+            } ]
           },
           "BatteryMaterialMass" : {
             "description" : "Weight of component material in Kilogram.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialMass",
-            "$ref" : "#/components/schemas/WeightInKilogram"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/WeightInKilogram"
+            } ]
           },
           "IsCriticalRawMaterial" : {
             "description" : "The battery passport must contain information on the critical raw materials present in the battery.\n\nThe information on the critical raw materials must also be provided on the battery label.\nPer Annex VI, Part A(10), critical raw materials must be reported if present in the battery in a concentration of more than 0,1 % weight by weight. ",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#isCriticalRawMaterial",
-            "$ref" : "#/components/schemas/Boolean"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Boolean"
+            } ]
           }
         },
         "required" : [ "BatteryMaterialLocation", "BatteryMaterialIdentifier", "BatteryMaterialName", "IsCriticalRawMaterial" ]
@@ -149,35 +167,47 @@
           "HazardousSubstanceClass" : {
             "description" : "Battery Regulation narrows reporting to substances falling under defined hazard classes and categories of the CLP regulation.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceClass",
-            "$ref" : "#/components/schemas/HazardousSubstanceClassEnum"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/HazardousSubstanceClassEnum"
+            } ]
           },
           "HazardousSubstanceName" : {
             "description" : "Clear name of hazardous substance.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceName",
-            "$ref" : "#/components/schemas/Text"
-          },
-          "HazardousSubstanceConcentration" : {
-            "description" : "Concentration of hazardous substance.",
-            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceConcentration",
-            "$ref" : "#/components/schemas/HazardousSubstanceConcentrationCharacteristic"
-          },
-          "HazardousSubstanceImpact" : {
-            "description" : "Impact statements based on, e.g., REACH or GHS for all hazard classes applicable to substances in the battery.",
-            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceImpact",
-            "$ref" : "#/components/schemas/ImpactList"
-          },
-          "HazardousSubstanceLocation" : {
-            "description" : "Hazardous substances (No. 19-23): \r\n   Location on a (sub-)component-level of all hazardous substances \r\n   (as 'any substance that poses a threat to human health and the environment'). \r\n   \r\n   Suggested via a unique identifier or nomenclature.",
-            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceLocation",
-            "$ref" : "#/components/schemas/HazardousSubstanceLocation"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/Text"
+            } ]
           },
           "HazardousSubstanceIdentifier" : {
             "description" : "CAS identifier of hazardous substance.",
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceIdentifier",
-            "$ref" : "#/components/schemas/MaterialIdentifierTrait"
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/MaterialIdentifierTrait"
+            } ]
+          },
+          "HazardousSubstanceConcentration" : {
+            "description" : "Concentration of hazardous substance.",
+            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceConcentration",
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/HazardousSubstanceConcentrationCharacteristic"
+            } ]
+          },
+          "HazardousSubstanceImpact" : {
+            "description" : "Impact statements based on, e.g., REACH or GHS for all hazard classes applicable to substances in the battery.",
+            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceImpact",
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/ImpactList"
+            } ]
+          },
+          "HazardousSubstanceLocation" : {
+            "description" : "Hazardous substances (No. 19-23): \r\n   Location on a (sub-)component-level of all hazardous substances \r\n   (as 'any substance that poses a threat to human health and the environment'). \r\n   \r\n   Suggested via a unique identifier or nomenclature.",
+            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceLocation",
+            "allOf" : [ {
+              "$ref" : "#/components/schemas/HazardousSubstanceLocation"
+            } ]
           }
         },
-        "required" : [ "HazardousSubstanceClass", "HazardousSubstanceName", "HazardousSubstanceConcentration", "HazardousSubstanceImpact", "HazardousSubstanceLocation", "HazardousSubstanceIdentifier" ]
+        "required" : [ "HazardousSubstanceName", "HazardousSubstanceIdentifier" ]
       },
       "HazardousSubstancesList" : {
         "description" : "Hazardous substances contained in the battery other than mercury, cadmium or lead. Substance as a chemical element and its compounds in the natural state or the result of a manufacturing process (ECHA). Battery Regulation narrows reporting to substances falling under defined hazard classes and categories of the CLP regulation.\n\nEUBR: Annex XIII (1b) ? Annex VI Part A (8)",
@@ -193,17 +223,23 @@
     "BatteryChemistry" : {
       "description" : "Composition of a product in general terms by specifying the cathode and anode active material as well as electrolyte.\n\nDIN DKE Spec 99100 chapter reference: 6.5.2",
       "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryChemistry",
-      "$ref" : "#/components/schemas/BatteryChemistryEntityList"
+      "allOf" : [ {
+        "$ref" : "#/components/schemas/BatteryChemistryEntityList"
+      } ]
     },
     "BatteryMaterials" : {
       "description" : "\"Component materials used\" (No. 17.a-c): Naming the materials (as a composition of substances) in cathode, anode, electrolyte according to public standards, including specification of the corresponding component (i.e., cathode, anode, or electrolyte). We suggest a reporting threshold of 0.1 % weight by weight.\n\nDIN DKE Spec 99100 chapter reference: 6.5.3-6.5.4",
       "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterials",
-      "$ref" : "#/components/schemas/BatteryMaterialList"
+      "allOf" : [ {
+        "$ref" : "#/components/schemas/BatteryMaterialList"
+      } ]
     },
     "HazardousSubstances" : {
       "description" : "\"Hazardous substances\" (No 20.a-e): Name (agreed substance nomenclature, e.g. IUPAC or chemical name) all hazardous substance (as 'any substance that poses a threat to human health and the environment'). Suggested above 0.1 % weight by weight within each (sub-)component.\n\nDIN DKE Spec 99100 chapter reference: 6.5.4 - 6.5.6",
       "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstances",
-      "$ref" : "#/components/schemas/HazardousSubstancesList"
+      "allOf" : [ {
+        "$ref" : "#/components/schemas/HazardousSubstancesList"
+      } ]
     }
   },
   "required" : [ "BatteryChemistry", "BatteryMaterials", "HazardousSubstances" ]
