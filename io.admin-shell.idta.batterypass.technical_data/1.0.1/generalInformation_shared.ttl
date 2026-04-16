@@ -33,30 +33,49 @@
    [ samm:property tech:manufacturerName; samm:payloadName "ManufacturerName" ] 
    [ samm:property tech:companyLogo; samm:optional true; samm:payloadName "CompanyLogo" ]
    [ samm:property :manufacturerIdentifier; samm:payloadName "ManufacturerIdentifier" ] 
-   [ samm:property :warrantyPeriod; samm:payloadName "WarrantyPeriod" ] 
+   [ samm:property :warrantyInformation; samm:payloadName "WarrantyInformation" ] 
    [ samm:property :batteryCategory; samm:payloadName "BatteryCategory" ]  
    [ samm:property :batteryMass; samm:payloadName "BatteryMass" ]   
    [ samm:property tech:productImages; samm:optional true; samm:payloadName "ProductImages" ]   
    ) .
-   
+ 
+:warrantyInformation a samm:Property ;
+   samm:see <urn:irdi:0173-1#02-AAO677#004> ;
+   samm:preferredName "identifier of the manufacturer"@en ;
+   samm:description "A battery passport must include information identifying the manufacturer.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.4"@en ;
+   samm:characteristic :WarrantyInformationCharacteristic .
+ 
+:WarrantyInformationCharacteristic a samm-c:SingleEntity ;
+   samm:dataType :WarrantyInformationEntity .
+ 
+:WarrantyInformationEntity a samm:Entity ;
+   samm:properties ( 
+   [ samm:property :warrantyPeriod; samm:payloadName "WarrantyPeriod" ] 
+   ) .
+ 
 :manufacturerIdentifier a samm:Property ;
    samm:see <urn:irdi:0173-1#02-AAO677#004> ;
    samm:preferredName "identifier of the manufacturer"@en ;
    samm:description "A battery passport must include information identifying the manufacturer.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.4"@en ;
    samm:characteristic samm-c:Text .
 
-
 :warrantyPeriod a samm:Property ;
    samm:preferredName "warranty period"@en ;
-   samm:description "The battery passport must include information about the period for which the commercial warranty applies.\n\nDIN DKE Spec chapter reference: 6.1.3.4"@en ;
+   samm:description """
+   The battery passport must include information about the period for which the commercial warranty applies.
+   
+   DIN DKE Spec chapter reference: 6.1.3.4
+   
+   The format shall be provided in ISO 8601 Notation for duration.
+   """@en ;
    samm:see <urn:irdi:0173-1#02-AAX540#004> ;
-   samm:characteristic :WarrantyPeriod ;
-   samm:exampleValue "2031-10"^^xsd:gYearMonth .
-   
-:WarrantyPeriod a samm-c:Measurement ;
-   samm:dataType xsd:gYearMonth;
-   samm-c:unit unit:month .
-   
+   samm:characteristic :WarrantyPeriodTrait ;
+   samm:exampleValue "P96M" .
+
+:WarrantyPeriodTrait a samm-c:Trait ;
+   samm-c:baseCharacteristic samm-c:Text;
+   samm-c:constraint shared:ISO8601Duration .    
+  
 :batteryCategory a samm:Property ;
    samm:preferredName "BatteryCategory"@en ;
    samm:description "Categories relevant for the battery passport: LMT battery, electric vehicle battery, stationary or other industrial battery >2kWh.\n\nDIN DKE Spec chapter reference: 6.1.3.5"@en ;

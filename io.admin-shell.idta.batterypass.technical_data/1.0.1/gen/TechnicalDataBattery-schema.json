@@ -16,10 +16,30 @@
         "x-samm-aspect-model-urn" : "urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#ResourcePath",
         "description" : "The path of a resource."
       },
-      "WarrantyPeriod" : {
+      "WarrantyPeriodTrait" : {
         "type" : "string",
-        "pattern" : "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?",
-        "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#WarrantyPeriod"
+        "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#WarrantyPeriodTrait",
+        "description" : "ISO 8601 duration format.",
+        "pattern" : "^P(?!$)((\\d+Y)?(\\d+M)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+S)?)?|T(?=\\d)(\\d+H)?(\\d+M)?(\\d+S)?)$"
+      },
+      "WarrantyInformationEntity" : {
+        "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#WarrantyInformationEntity",
+        "type" : "object",
+        "properties" : {
+          "WarrantyPeriod" : {
+            "description" : "\r\n   The battery passport must include information about the period for which the commercial warranty applies.\r\n   \r\n   DIN DKE Spec chapter reference: 6.1.3.4\r\n   \r\n   The format shall be provided in ISO 8601 Notation for duration.\r\n   ",
+            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyPeriod",
+            "$ref" : "#/components/schemas/WarrantyPeriodTrait"
+          }
+        },
+        "required" : [ "WarrantyPeriod" ]
+      },
+      "WarrantyInformationCharacteristic" : {
+        "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#WarrantyInformationCharacteristic",
+        "type" : "object",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/WarrantyInformationEntity"
+        } ]
       },
       "BatteryCategoryEnum" : {
         "type" : "string",
@@ -110,10 +130,10 @@
             "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#manufacturerIdentifier",
             "$ref" : "#/components/schemas/Text"
           },
-          "WarrantyPeriod" : {
-            "description" : "The battery passport must include information about the period for which the commercial warranty applies.\n\nDIN DKE Spec chapter reference: 6.1.3.4",
-            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyPeriod",
-            "$ref" : "#/components/schemas/WarrantyPeriod"
+          "WarrantyInformation" : {
+            "description" : "A battery passport must include information identifying the manufacturer.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.4",
+            "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyInformation",
+            "$ref" : "#/components/schemas/WarrantyInformationCharacteristic"
           },
           "BatteryCategory" : {
             "description" : "Categories relevant for the battery passport: LMT battery, electric vehicle battery, stationary or other industrial battery >2kWh.\n\nDIN DKE Spec chapter reference: 6.1.3.5",
@@ -131,7 +151,7 @@
             "$ref" : "#/components/schemas/ProductImageSet"
           }
         },
-        "required" : [ "ManufacturerName", "ManufacturerIdentifier", "WarrantyPeriod", "BatteryCategory", "BatteryMass" ]
+        "required" : [ "ManufacturerName", "ManufacturerIdentifier", "WarrantyInformation", "BatteryCategory", "BatteryMass" ]
       },
       "GeneralInformationCharacteristic" : {
         "x-samm-aspect-model-urn" : "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#GeneralInformationCharacteristic",

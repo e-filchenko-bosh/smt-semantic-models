@@ -1,9 +1,11 @@
 {
   "GeneralInformation" : {
-    "ManufacturerName" : "CPRFVMtMg",
-    "CompanyLogo" : "https://example.com/1dYBcXRc",
-    "ManufacturerIdentifier" : "dxoHJV4pOX",
-    "WarrantyPeriod" : "2031-10",
+    "ManufacturerName" : "sQoGGV3",
+    "CompanyLogo" : "https://example.com/wRdNTyS",
+    "ManufacturerIdentifier" : "2s0xV8Vmw",
+    "WarrantyInformation" : {
+      "WarrantyPeriod" : "P96M"
+    },
     "BatteryCategory" : "ev",
     "BatteryMass" : 1007.0,
     "ProductImages" : [ {
@@ -12,7 +14,7 @@
         "contentType" : "application/pdf"
       },
       "ImageNote" : [ {
-        "en" : "Ge75Uhfd"
+        "en" : "yPc3Sn5ns"
       } ]
     } ]
   },
@@ -56,8 +58,8 @@
       "ExpectedLifetimeInCalendarYears" : 15,
       "ExpectedNumberOfCycles" : 1000,
       "CapacityThresholdExhaustion" : 23.0,
-      "CycleLifeReferenceTest" : [ "IOZ3UpWO" ],
-      "CrateOfRelevantCycleLifeTest" : -33570.6
+      "CycleLifeReferenceTest" : [ "hIIjyfZ" ],
+      "CrateOfRelevantCycleLifeTest" : -57931.4
     }
   }
 }
