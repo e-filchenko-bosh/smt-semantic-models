@@ -35,13 +35,13 @@
 
 
 :TechnicalAttributes a samm:Entity ;
-  samm:see <urn:irdi:0173-1#02-ABL358#002/0173-1#01-AHX773#002> .
-  samm:properties (  
-    [ samm:property :capacityEnergyVoltage; samm:payloadName "CapacityEnergyVoltage" ] 
-    [ samm:property :roundTripEnergyEfficiency; samm:payloadName "RoundTripEnergyEfficiency" ] 
-	[ samm:property :resistance; samm:payloadName "Resistance" ] 
-    [ samm:property :powerCapability; samm:payloadName "PowerCapability" ] 
-	[ samm:property :temperature; samm:payloadName "Temperature" ] 
+  samm:see <urn:irdi:0173-1#02-ABL358#002/0173-1#01-AHX773#002> ;
+  samm:properties (
+    [ samm:property :capacityEnergyVoltage; samm:payloadName "CapacityEnergyVoltage" ]
+    [ samm:property :roundTripEnergyEfficiency; samm:payloadName "RoundTripEnergyEfficiency" ]
+	[ samm:property :resistance; samm:payloadName "Resistance" ]
+    [ samm:property :powerCapability; samm:payloadName "PowerCapability" ]
+	[ samm:property :temperature; samm:payloadName "Temperature" ]
     [ samm:property :lifetime; samm:payloadName "Lifetime" ]
    ) .
 
